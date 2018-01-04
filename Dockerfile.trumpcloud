@@ -1,0 +1,10 @@
+FROM continuumio/anaconda3:latest
+ADD *.png /
+ADD *.ipynb /
+ENTRYPOINT ["jupyter",                 \
+	    "notebook",                \
+	    "--ip=0.0.0.0",            \
+	    "--NotebookApp.password=", \
+	    "--NotebookApp.token=",    \
+	    "--no-browser",            \
+	    "--allow-root"]
